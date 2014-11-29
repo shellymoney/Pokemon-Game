@@ -20,12 +20,12 @@ class Moves():
 class Pokemon():
     # the first argument __init__() gets is used to refer to the
     # instance object
-    def __init__(self, pokemon_name, trainer_name, level, HP, moves):
+    def __init__(self, pokemon_name, trainer_name, level, HP, poke_moves):
         self.pokemon_name = pokemon_name
         self.trainer_name = trainer_name
         self.level = level
         self.HP = HP
-        self.moves = moves
+        self.poke_moves = poke_moves
         
     # returns a printable representation of the object
     def __repr__(self):
@@ -84,15 +84,16 @@ class Battle():
                 elif choice == 4:
                     print "Bulbasaur used Scratch"
         else:
+            print "%s goes first!" % self.pokemon2
             random_int = randint(1, 20)
             if random_int <= 5:
-                print "%s uses %s" % (self.pokemon2.Moves.move1)
+                print "%s uses %s" % (self.pokemon2, self.pokemon2.poke_moves.move1)
             if ((random_int >=6) & (random_int <= 10)):
-                print "%s uses %s" % (self.pokemon2.Moves.move2)
+                print "%s uses %s" % (self.pokemon2, self.pokemon2.poke_moves.move2)
             if ((random_int >=11) & (random_int <= 15)):
-                print "%s uses %s" % (self.pokemon2.Moves.move3)
+                print "%s uses %s" % (self.pokemon2, self.pokemon2.poke_moves.move3)
             if ((random_int >=16) & (random_int <= 20)):
-                print "%s uses %s" % (self.pokemon2.Moves.move4)
+                print "%s uses %s" % (self.pokemon2, self.pokemon2.poke_moves.move4)
       
 
 # from My_Pokemon get 
@@ -102,9 +103,3 @@ My_Pokemon.Trainer_Challenge()
 # will take the first arguments from My_Pokemon and Trainer_Pokemon
 Pokemon_in_Battle = Battle(My_Pokemon, Trainer_Pokemon)
 Pokemon_in_Battle.first_strike()
-
-
-
-
-
-
