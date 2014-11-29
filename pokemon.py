@@ -4,15 +4,15 @@ from random import randint
 class Pokemon():
 	# the first argument __init__ () gets is used to refer to the
 	# instance object
-	def __init__(self, trainer_name, pokemon_name, level, base_hp):
+	def __init__(self, trainer_name, pokemon_name, level, HP):
 		self.trainer_name = trainer_name
 		self.pokemon_name = pokemon_name
 		self.level = level
-		self.base_hp = base_hp
+		self.HP = HP
 	# lets player know pokemon stats
 	def description(self):
 		print "%s's pokemon is a %s that is level %s and has %s HP" % (
-		self.trainer_name, self.pokemon_name, self.level, self.base_hp)
+		self.trainer_name, self.pokemon_name, self.level, self.HP)
 	def Trainer_Challenge(self):
 		print "\nTrainer %s challenges you to a batttle." % (self.trainer_name)
 		print "%s sends out %s" % (self.trainer_name, self.pokemon_name)
