@@ -55,6 +55,12 @@ class Pokemon():
       
 bulbasaurs_moves = Moves("Bulbasaur", "Razor Leaf", "Vine Whip", "Solar Beam", "Scratch")
 My_Pokemon =  Pokemon("Bulbasaur", "Ashley", 15, 100, bulbasaurs_moves)
+My_Pokemon.description()
+
+# print(My_Pokemon) prints 'Bulbasaur'
+gyradosz_moves = Moves("Gyarados", "Dragon Rage", "Twister", "Bite", "Hydro Pump")
+Trainer_Pokemon = Pokemon("Gyarados", "Esteban", 13, 80, gyradosz_moves)
+Trainer_Pokemon.description()
 
 class Battle(Pokemon, Moves):
     def __init__(self, pokemon1, pokemon2):
@@ -67,6 +73,7 @@ class Battle(Pokemon, Moves):
             print "%s goes first!" % self.pokemon1
             if self.pokemon1 == My_Pokemon:
                 print "What move would you like to use?"
+                print bulbasaurs_moves.move_set()
                 choice = raw_input("> ")
                 if choice == 1:
                     print "Bulbasaur used Razor Leaf"
@@ -79,21 +86,14 @@ class Battle(Pokemon, Moves):
         else:
             random_int = randint(1, 20)
             if random_int <= 5:
-                print "%s uses %s" % (self.pokemon_name, self.move1)
+                print "%s uses %s" % (self.pokemon2, self.move1)
             if ((random_int >=6) & (random_int <= 10)):
-                print "%s uses %s" % (self.pokemon_name, self.move2)
+                print "%s uses %s" % (self.pokemon2, self.move2)
             if ((random_int >=11) & (random_int <= 15)):
-                print "%s uses %s" % (self.pokemon_name, self.move3)
+                print "%s uses %s" % (self.pokemon2, self.move3)
             if ((random_int >=16) & (random_int <= 20)):
-                print "%s uses %s" % (self.pokemon_name, self.move4)
+                print "%s uses %s" % (self.pokemon2, self.move4)
       
-# set My_Pokemon to an instance of class Pokemon
-My_Pokemon.description()
-print(My_Pokemon)
-
-gyradosz_moves = Moves("Gyarados", "Dragon Rage", "Twister", "Bite", "Hydro Pump")
-Trainer_Pokemon = Pokemon("Gyarados", "Esteban", 13, 80, gyradosz_moves)
-Trainer_Pokemon.description()
 
 # from My_Pokemon get 
 Trainer_Pokemon.Trainer_Challenge()
