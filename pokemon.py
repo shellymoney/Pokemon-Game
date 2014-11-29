@@ -17,6 +17,10 @@ class Pokemon():
 		print "\nTrainer %s challenges you to a batttle." % (self.trainer_name)
 		print "%s sends out %s" % (self.trainer_name, self.pokemon_name)
 		print " "
+	def attack(self, target):
+		damage = randint(1, 25)
+		target.HP -= damage
+		return damage
 # set My_Pokemon to an instance of class Pokemon
 My_Pokemon =  Pokemon("Ashley", "Bulbasaur", "15", 100)
 My_Pokemon.description()
