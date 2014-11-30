@@ -70,21 +70,22 @@ class Battle():
     def first_strike (self):
         random_int = randint(0, 10)
         if random_int < 5:
-            print "%s goes first!" % self.pokemon1
+            print "\n%s goes first!" % self.pokemon1
             if self.pokemon1 == My_Pokemon:
-                print "What move would you like to use?"
+                print "What move would you like to use?\n"
                 print bulbasaurs_moves.move_set()
                 choice = int(raw_input("> "))
                 if choice == 1:
-                    print "Bulbasaur used Razor Leaf"
+                    print "%s used %s" % (self.pokemon1, self.pokemon1.poke_moves.move1)
+                    Pokemon.attack(Trainer_Pokemon)
                 elif choice == 2:
-                    print "Bulbasaur used Vine Whip"
+                    print "%s used %s" % (self.pokemon1, self.pokemon1.poke_moves.move2)
                 elif choice == 3:
-                    print "Bulbasaur used Solar Beam"
+                    print "%s used %s" % (self.pokemon1, self.pokemon1.poke_moves.move3)
                 elif choice == 4:
-                    print "Bulbasaur used Scratch"
+                    print "%s used %s" % (self.pokemon1, self.pokemon1.poke_moves.move4)
         else:
-            print "%s goes first!" % self.pokemon2
+            print "\n%s goes first!" % self.pokemon2
             random_int = randint(1, 20)
             if random_int <= 5:
                 print "%s uses %s" % (self.pokemon2, self.pokemon2.poke_moves.move1)
